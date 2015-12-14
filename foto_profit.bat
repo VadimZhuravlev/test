@@ -9,6 +9,8 @@ Set $prog=c:\foto_profit\ncftp\ncftpput.exe
 
 %$prog% -u %$User% -p %$Pass% -m -R -DD -E %$Host% Copr1\%$DST% "%$SRC%" 
 echo.%errorlevel% >"%$log%"
+
+:: траляля
 Findstr /B /L "0" "%$log%" & for /D %%a in (%$SRC%) do rmdir /q /s "%%a"
 pause
 
