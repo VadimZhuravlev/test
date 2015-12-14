@@ -1,4 +1,4 @@
-@echo on
+@echo off
 Set $SRC=c:\ovp\foto_profit\*.*
 Set $DST=%date:~6,4%%date:~3,2%%date:~0,2%
 Set $Host=192.168.12.32
@@ -12,6 +12,5 @@ echo.%errorlevel% >"%$log%"
 
 :: траляля
 Findstr /B /L "0" "%$log%" & for /D %%a in (%$SRC%) do rmdir /q /s "%%a"
-pause
 
 
