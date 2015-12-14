@@ -1,4 +1,4 @@
-@echo off
+@echo on
 Set $SRC=c:\ovp\foto_profit\*.*
 Set $DST=%date:~6,4%%date:~3,2%%date:~0,2%
 Set $Host=192.168.12.32
@@ -10,5 +10,6 @@ Set $prog=c:\foto_profit\ncftp\ncftpput.exe
 %$prog% -u %$User% -p %$Pass% -m -R -DD -E %$Host% Copr1\%$DST% "%$SRC%" 
 echo.%errorlevel% >"%$log%"
 Findstr /B /L "0" "%$log%" & for /D %%a in (%$SRC%) do rmdir /q /s "%%a"
+pause
 
 
